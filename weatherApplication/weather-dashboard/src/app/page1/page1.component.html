@@ -1,0 +1,40 @@
+<p>page1 works!</p>
+<!-- Tabular Report with Pagination -->
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of entries">
+        <td>{{ entry.id }}</td>
+        <td>{{ entry.name }}</td>
+        <td>{{ entry.email }}</td>
+        <td>
+          <button (click)="editEntry(entry)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Pagination -->
+  <div>
+    <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="loadNextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  
+  <!-- Add New Entry Form -->
+  <div>
+    <h2>Add New Entry</h2>
+    <form (submit)="addEntry()">
+      <input type="text" [(ngModel)]="newEntry.name" placeholder="Name" required>
+      <input type="email" [(ngModel)]="newEntry.email" placeholder="Email" required>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,25 @@
+<p>page2 works!</p>
+<!-- Display Weather Data -->
+<div>
+    <h2>Weather Data</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Temperature (°C)</th>
+          <!-- Add more data columns as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of weatherData">
+          <td>{{ data.city }}</td>
+          <td>{{ data.temperature }}</td>
+          <!-- Add more data columns as needed -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Integrate Page 1 Component -->
+  <app-page1></app-page1>
+  

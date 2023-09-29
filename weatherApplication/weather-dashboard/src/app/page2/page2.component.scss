@@ -1,0 +1,45 @@
+/* Add your SCSS styles for page 2 here */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .graph-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .graph {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  .help-icon {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+  
+    &:hover {
+      color: #0056b3;
+    }
+  }
+  
+  .help-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  
+    &.active {
+      display: block;
+    }
+  }
+  
