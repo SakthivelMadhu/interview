@@ -15,12 +15,14 @@ class CoffeeMachine {
 
     // Method to refill a specific ingredient with a certain quantity
     public synchronized void refillIngredient(String ingredient, int quantity) {
+         // Add or update ingredient quantity
         ingredients.put(ingredient, ingredients.getOrDefault(ingredient, 0) + quantity);
     }
 
     // Method to check if there are enough ingredients for a given recipe
     public synchronized boolean checkIngredients(Map<String, Integer> recipe) {
         for (String ingredient : recipe.keySet()) {
+            // Check if ingredient is available in sufficient quantity
             if (!ingredients.containsKey(ingredient) || ingredients.get(ingredient) < recipe.get(ingredient)) {
                 System.out.println("Not enough " + ingredient);
                 return false;
@@ -32,6 +34,7 @@ class CoffeeMachine {
     // Method to make a beverage
     public synchronized void makeBeverage(String name, Map<String, Integer> recipe) {
         if (checkIngredients(recipe)) {
+            // If there are enough ingredients, prepare the beverage
             System.out.println(name + " is prepared");
             for (String ingredient : recipe.keySet()) {
                 ingredients.put(ingredient, ingredients.get(ingredient) - recipe.get(ingredient));
