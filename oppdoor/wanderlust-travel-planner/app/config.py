@@ -1,7 +1,5 @@
-import os
-
+# config.py
 class Config:
-    
-    # MySQL configurations
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:Sakthivel1402!@localhost/travel_planner'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'your_secret_key'
